@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/Proyecto/Biblioteca-master/app/src/main/res/drawable/splash.xml" value="0.1905" />
+        <entry key="..\:/Proyecto/Biblioteca-master/app/src/main/res/layout/activity_main.xml" value="0.24954710144927536" />
+        <entry key="..\:/Proyecto/Biblioteca-master/app/src/main/res/layout/activity_register.xml" value="0.24954710144927536" />
+        <entry key="..\:/Proyecto/Biblioteca-master/app/src/main/res/layout/activity_registrar_user.xml" value="0.24954710144927536" />
+        <entry key="..\:/Proyecto/Biblioteca-master/app/src/main/res/layout/activity_splash.xml" value="0.24954710144927536" />
+        <entry key="..\:/Users/Gutierrez/AndroidStudioProjects/Biblioteca/app/src/main/res/drawable-v24/Logo_background.xml" value="0.1905" />
+        <entry key="..\:/Users/Gutierrez/AndroidStudioProjects/Biblioteca/app/src/main/res/drawable-v24/logos_background.xml" value="0.18" />
+        <entry key="..\:/Users/Gutierrez/AndroidStudioProjects/Biblioteca/app/src/main/res/drawable/degrado.xml" value="0.1905" />
+        <entry key="..\:/Users/Gutierrez/AndroidStudioProjects/Biblioteca/app/src/main/res/drawable/ic_launcher_background.xml" value="0.1905" />
+        <entry key="..\:/Users/Gutierrez/AndroidStudioProjects/Biblioteca/app/src/main/res/drawable/splash.xml" value="0.1905" />
+        <entry key="..\:/Users/Gutierrez/AndroidStudioProjects/Biblioteca/app/src/main/res/layout/activity_main.xml" value="0.33" />
+        <entry key="..\:/Users/Gutierrez/AndroidStudioProjects/Biblioteca/app/src/main/res/mipmap-anydpi-v26/Logo.xml" value="0.164" />
+        <entry key="..\:/Users/Gutierrez/AndroidStudioProjects/Biblioteca/app/src/main/res/mipmap-anydpi-v26/logos_round.xml" value="0.1905" />
+        <entry key="..\:/Users/jorsa/AndroidStudioProjects/Biblioteca-master/app/src/main/res/drawable/splash.xml" value="0.1265" />
+        <entry key="..\:/Users/jorsa/AndroidStudioProjects/Biblioteca-master/app/src/main/res/layout/activity_main.xml" value="0.33" />
+        <entry key="..\:/Users/jorsa/AndroidStudioProjects/Biblioteca-master/app/src/main/res/layout/activity_register.xml" value="0.2" />
+        <entry key="..\:/Users/jorsa/AndroidStudioProjects/Biblioteca-master/app/src/main/res/layout/activity_registrar_user.xml" value="0.2" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/build/classes" />
+  </component>
+  <component name="ProjectType">
+    <option name="id" value="Android" />
+  </component>
+</project>
