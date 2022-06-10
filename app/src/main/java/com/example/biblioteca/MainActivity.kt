@@ -5,6 +5,7 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
+import com.example.biblioteca.data.RegistrarUser
 import com.example.biblioteca.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
@@ -15,7 +16,7 @@ class MainActivity : AppCompatActivity() {
         setContentView(mainVinculo.root)
         title = ""
 
-        mainVinculo.textView.setOnClickListener {
+        mainVinculo.registar.setOnClickListener {
             val enviar = Intent(this, RegisterActivity::class.java)
             startActivity(enviar)
         }
@@ -23,19 +24,19 @@ class MainActivity : AppCompatActivity() {
 
         mainVinculo.button.setOnClickListener {
             val usuario = preferences.getString("usuario", "")
-            val claveMain = preferences.getString("claves", "")
+            val claveMain = preferences.getString("clave", "")
 
             val user = mainVinculo.user.text.toString()
             val password = mainVinculo.claveR.text.toString()
 
-            //Toast.makeText(this, usuario, Toast.LENGTH_SHORT).show()
-            //Toast.makeText(this, clave, Toast.LENGTH_SHORT).show()
+           // Toast.makeText(this, usuario, Toast.LENGTH_SHORT).show()
+            // Toast.makeText(this, claveMain, Toast.LENGTH_SHORT).show()
 
             if (usuario.equals(user) and claveMain.equals(password)) {
                 val editor = preferences.edit()
                 editor.putString("sesion", "1")
                 editor.apply()
-                startActivity(Intent(this, RegistrarUser::class.java))
+                startActivity(Intent(this, MenuActivity::class.java))
             } else {
                 Toast.makeText(this, "Datos Incorrectos", Toast.LENGTH_SHORT).show()
             }

@@ -4,9 +4,23 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".RegistrarUser"
+    tools:context=".data.RegistrarUser"
     android:backgroundTint="@null"
     android:background="@drawable/degrado">
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/show"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        android:clickable="true"
+        android:focusable="true"
+        android:backgroundTint="@color/white"
+        android:tint="@color/blue"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toTopOf="@+id/delate"
+        app:layout_constraintEnd_toEndOf="@+id/delate"
+        app:srcCompat="@drawable/show" />
 
     <TextView
         android:id="@+id/textView4"
@@ -22,39 +36,26 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <TextView
-        android:id="@+id/id"
-        android:layout_width="44dp"
-        android:layout_height="43dp"
-        android:layout_marginTop="45dp"
-        android:hint="ID"
-        android:text=""
-        android:textColorHint="@color/white"
-        android:textSize="30dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView4" />
-
     <EditText
         android:id="@+id/names"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="36dp"
+        android:layout_marginTop="56dp"
+        android:backgroundTint="@color/white"
         android:ems="10"
         android:hint="Nombre Completo"
         android:inputType="textPersonName"
         android:textColorHint="#FFFFFF"
-        android:backgroundTint="@color/white"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/id" />
+        app:layout_constraintTop_toBottomOf="@+id/textView4" />
 
     <EditText
         android:id="@+id/identificacion"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="28dp"
+        android:layout_marginTop="20dp"
         android:backgroundTint="@color/white"
         android:ems="10"
         android:hint="N° Identidad"
@@ -96,17 +97,60 @@
         app:layout_constraintTop_toBottomOf="@+id/email" />
 
     <Button
-        android:id="@+id/button2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
-        android:text="Button"
+        android:id="@+id/agregar"
+        android:layout_width="65dp"
+        android:layout_height="74dp"
+        android:layout_marginTop="56dp"
         style="?attr/materialButtonOutlinedStyle"
-        android:textColor="@color/white"
         app:strokeColor="@color/white"
-        app:cornerRadius="18dp"
+        app:icon="@drawable/addu_ser"
+        app:iconPadding="2dp"
+        app:iconSize="45dp"
+        app:iconTint="#FDFDFD"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/password" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/add"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="36dp"
+        android:layout_marginBottom="44dp"
+        android:clickable="true"
+        android:focusable="true"
+        android:backgroundTint="@color/white"
+        android:tint="@color/blue"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:srcCompat="@drawable/agregar" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/delate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        android:clickable="true"
+        android:focusable="true"
+        android:backgroundTint="@color/white"
+        android:tint="@color/blue"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toTopOf="@+id/add"
+        app:layout_constraintEnd_toEndOf="@+id/add"
+        app:srcCompat="@drawable/borrar" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/update"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        android:clickable="true"
+        android:focusable="true"
+        android:backgroundTint="@color/white"
+        android:tint="@color/blue"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toTopOf="@+id/show"
+        app:layout_constraintEnd_toEndOf="@+id/show"
+        app:srcCompat="@drawable/update" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
