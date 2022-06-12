@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.biblioteca">
+    package="com.example.biblioteca"
+    android:screenOrientation="landscape">
+
+    <uses-permission android:name="android.permission.INTERNET"/>
 
     <application
         android:allowBackup="true"
@@ -9,19 +12,25 @@
         android:roundIcon="@mipmap/logos_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Biblioteca">
-
+        <activity
+            android:name=".perfil.Pefil"
+            android:exported="false"
+            android:parentActivityName=".MainActivity"/>
         <activity
             android:name=".tipoUser.tipoActivity"
-            android:exported="false" />
+            android:exported="false"
+            android:parentActivityName=".MenuActivity"/>
         <activity
             android:name=".MenuActivity"
             android:exported="false" />
         <activity
             android:name=".data.RegistrarUser"
-            android:exported="false" />
+            android:exported="false"
+            android:parentActivityName=".MenuActivity"/>
         <activity
             android:name=".RegisterActivity"
-            android:exported="false" />
+            android:exported="false"
+            android:parentActivityName=".MainActivity"/>
         <activity
             android:name=".SplashActivity"
             android:exported="true"

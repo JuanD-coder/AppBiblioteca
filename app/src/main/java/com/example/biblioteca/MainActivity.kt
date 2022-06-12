@@ -4,9 +4,12 @@ import android.content.Context
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.Menu
+import android.view.MenuItem
 import android.widget.Toast
 import com.example.biblioteca.data.RegistrarUser
 import com.example.biblioteca.databinding.ActivityMainBinding
+import com.example.biblioteca.perfil.Pefil
 
 class MainActivity : AppCompatActivity() {
     private lateinit var mainVinculo: ActivityMainBinding
@@ -14,7 +17,7 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         mainVinculo = ActivityMainBinding.inflate(layoutInflater)
         setContentView(mainVinculo.root)
-        title = ""
+        title = "Inicio"
 
         mainVinculo.registar.setOnClickListener {
             val enviar = Intent(this, RegisterActivity::class.java)
@@ -29,7 +32,7 @@ class MainActivity : AppCompatActivity() {
             val user = mainVinculo.user.text.toString()
             val password = mainVinculo.claveR.text.toString()
 
-           // Toast.makeText(this, usuario, Toast.LENGTH_SHORT).show()
+            // Toast.makeText(this, usuario, Toast.LENGTH_SHORT).show()
             // Toast.makeText(this, claveMain, Toast.LENGTH_SHORT).show()
 
             if (usuario.equals(user) and claveMain.equals(password)) {
@@ -46,4 +49,17 @@ class MainActivity : AppCompatActivity() {
             }
         }
     }
+
+    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+        menuInflater.inflate(R.menu.menu2, menu)
+        return true //super.onCreateOptionsMenu(menu)
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        when (item.itemId) {
+            R.id.perfil -> startActivity(Intent(this, Pefil::class.java))
+        }
+        return super.onOptionsItemSelected(item)
+    }
+
 }

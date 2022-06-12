@@ -4,9 +4,12 @@ import android.content.Context
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.Menu
+import android.view.MenuItem
 import android.widget.Toast
 import com.example.biblioteca.databinding.ActivityMainBinding
 import com.example.biblioteca.databinding.ActivityRegisterBinding
+import com.example.biblioteca.perfil.Pefil
 
 class RegisterActivity : AppCompatActivity() {
     private lateinit var registerVinculo: ActivityRegisterBinding
@@ -32,4 +35,17 @@ class RegisterActivity : AppCompatActivity() {
             startActivity(Intent(this,MainActivity::class.java))
         }
     }
+
+    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+        menuInflater.inflate(R.menu.menu2, menu)
+        return true //super.onCreateOptionsMenu(menu)
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        when (item.itemId) {
+            R.id.perfil -> startActivity(Intent(this, Pefil::class.java))
+        }
+        return super.onOptionsItemSelected(item)
+    }
+
 }

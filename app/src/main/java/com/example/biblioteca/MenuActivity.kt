@@ -1,10 +1,14 @@
 package com.example.biblioteca
 
+import android.content.Context
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.Menu
+import android.view.MenuItem
 import com.example.biblioteca.data.RegistrarUser
 import com.example.biblioteca.databinding.ActivityMenuBinding
+import com.example.biblioteca.perfil.Pefil
 import com.example.biblioteca.tipoUser.tipoActivity
 
 class MenuActivity : AppCompatActivity() {
@@ -23,4 +27,27 @@ class MenuActivity : AppCompatActivity() {
             startActivity(Intent(this,tipoActivity::class.java))
         }
     }
+
+    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+        menuInflater.inflate(R.menu.menu, menu)
+        return true //super.onCreateOptionsMenu(menu)
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        when(item.itemId){
+            R.id.perfil -> startActivity(Intent(this,Pefil::class.java))
+            R.id.cerrar -> cerrarSesion()
+        }
+        return super.onOptionsItemSelected(item)
+    }
+
+    private fun cerrarSesion() {
+        val preferences = getSharedPreferences("access", Context.MODE_PRIVATE)
+        val editor = preferences.edit()
+        editor.putString("sesion","0")
+        editor.apply()
+        finish()
+        startActivity(Intent(this,MainActivity::class.java))
+    }
+
 }
