@@ -37,7 +37,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
-        android:id="@+id/names"
+        android:id="@+id/tipoUser"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="56dp"
@@ -46,13 +46,14 @@
         android:hint="Nombre Completo"
         android:inputType="textPersonName"
         android:textColorHint="#FFFFFF"
+        android:textColor="@color/white"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView4" />
 
     <EditText
-        android:id="@+id/identificacion"
+        android:id="@+id/correos"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
@@ -61,55 +62,77 @@
         android:hint="N° Identidad"
         android:inputType="number"
         android:textColorHint="#FFFFFF"
+        android:textColor="@color/white"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/names" />
+        app:layout_constraintTop_toBottomOf="@+id/tipoUser" />
 
     <EditText
-        android:id="@+id/email"
+        android:id="@+id/claveTipos"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
+        android:layout_marginTop="20dp"
+        android:backgroundTint="@color/white"
         android:ems="10"
         android:hint="E-mail"
         android:inputType="textEmailAddress"
         android:textColorHint="#FFFFFF"
-        android:backgroundTint="@color/white"
+        android:textColor="@color/white"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/identificacion" />
+        app:layout_constraintTop_toBottomOf="@+id/correos" />
 
     <EditText
         android:id="@+id/password"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
+        android:backgroundTint="@color/white"
         android:ems="10"
         android:hint="Contraseña"
         android:inputType="textPassword"
+        android:textColor="@color/white"
         android:textColorHint="#FFFFFF"
-        android:backgroundTint="@color/white"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/email" />
+        app:layout_constraintTop_toBottomOf="@+id/claveTipos" />
+
+    <EditText
+        android:id="@+id/tipoUsuario"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:backgroundTint="@color/white"
+        android:ems="10"
+        android:hint="Tipo de Usuario"
+        android:inputType="number"
+        android:textColor="@color/white"
+        android:textColorHint="#FFFFFF"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/password" />
 
     <Button
         android:id="@+id/agregar"
-        android:layout_width="65dp"
-        android:layout_height="74dp"
-        android:layout_marginTop="56dp"
         style="?attr/materialButtonOutlinedStyle"
-        app:strokeColor="@color/white"
+        android:layout_width="166dp"
+        android:layout_height="68dp"
+        android:layout_marginTop="25dp"
+        android:text="AGREGAR"
+        android:textColor="#FFFFFF"
         app:icon="@drawable/addu_ser"
         app:iconPadding="2dp"
         app:iconSize="45dp"
         app:iconTint="#FDFDFD"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/password" />
+        app:layout_constraintTop_toBottomOf="@+id/tipoUsuario"
+        app:strokeColor="@color/white" />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/add"

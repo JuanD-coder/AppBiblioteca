@@ -39,6 +39,10 @@ class MainActivity : AppCompatActivity() {
                 startActivity(Intent(this, MenuActivity::class.java))
             } else {
                 Toast.makeText(this, "Datos Incorrectos", Toast.LENGTH_SHORT).show()
+                mainVinculo.user.error = "Ingrese su E-mail"
+                mainVinculo.claveR.error = "Ingrese su Contraseña"
+                mainVinculo.user.requestFocus()
+                mainVinculo.claveR.requestFocus()
             }
         }
     }
