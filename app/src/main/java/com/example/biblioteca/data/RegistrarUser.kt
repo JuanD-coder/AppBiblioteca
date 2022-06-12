@@ -32,7 +32,7 @@ class RegistrarUser : AppCompatActivity() {
         setContentView(binding.root)
         title = ""
 
-        binding.names.text.isEmpty()
+        binding.tipoUser.text.isEmpty()
 
 
         binding.agregar.setOnClickListener{
@@ -40,20 +40,24 @@ class RegistrarUser : AppCompatActivity() {
             var id:Int?=null
             var correo:String?=null
             var clave:String?=null
-            if (!binding.names.text.isEmpty() && !binding.identificacion.text.isEmpty() && !binding.email.text.isEmpty() && !binding.password.text.isEmpty()){
-                val userInfo = Entidades(binding.identificacion.text.toString().toInt(),binding.names.text.toString(),binding.email.text.toString(),binding.password.text.toString())
+            var tipo:String?=null
+            if (!binding.tipoUser.text.isEmpty() && !binding.correos.text.isEmpty() && !binding.claveTipos.text.isEmpty() && !binding.password.text.isEmpty() && !binding.tipoUsuario.text.isEmpty()){
+                val userInfo = Entidades(binding.correos.text.toString().toInt(),binding.tipoUser.text.toString(),binding.claveTipos.text.toString(),
+                    binding.password.text.toString(),binding.tipoUsuario.text.toString())
                 GlobalScope.launch(Dispatchers.IO) {
                     BaseDatos.getInstance(this@RegistrarUser).usuarioDao().insert(userInfo)
                     }
                 Toast.makeText(applicationContext, "Registro Insertado", Toast.LENGTH_SHORT).show()
-            } else{
-                binding.identificacion.error = "Ingrese la identificacion"
-                binding.names.error = "Ingrese su nombre"
-                binding.email.error = "Ingrese un correo"
+            } else {
+                binding.correos.error = "Ingrese la identificacion"
+                binding.tipoUser.error = "Ingrese su nombre"
+                binding.claveTipos.error = "Ingrese un correo"
                 binding.password.error = "Ingrese una contraseña"
-                binding.identificacion.requestFocus()
-                binding.names.requestFocus()
-                binding.email.requestFocus()
+                binding.tipoUser.error = "Ingrese el ID del tipo de usuario"
+                binding.tipoUser.requestFocus()
+                binding.correos.requestFocus()
+                binding.tipoUser.requestFocus()
+                binding.claveTipos.requestFocus()
                 binding.password.requestFocus()
             }
         }
@@ -85,7 +89,7 @@ class RegistrarUser : AppCompatActivity() {
                 allUser = BaseDatos.getInstance(this@RegistrarUser).usuarioDao().display()
                 launch (Dispatchers.Main){
                     allUser.forEach{
-                        userData.append("id=" + it.idenficacion + " Nombre= " + it.name + " E-mail= " + it.correo + " Contraseña= " + it.clave + "\n")
+                        userData.append("identifiacion:" + it.idenficacion + " Nombre: " + "\n" + it.name + " E-mail:: " + it.telefono + " Contraseña " + it.fecha + " Tipo de usuario" +it.tipo + "\n")
                     }
                     mostrar(userData.toString())
                 }
@@ -99,14 +103,21 @@ class RegistrarUser : AppCompatActivity() {
             alerts.setPositiveButton("Actualizar Usuario",object :DialogInterface.OnClickListener{
                 override fun onClick(p0: DialogInterface?, p1: Int) {
                     val uid:Int = userId.text.toString().toInt()
-                    if (!binding.names.text.isEmpty() && !binding.identificacion.text.isEmpty() && !binding.email.text.isEmpty() && !binding.password.text.isEmpty()){
-                        val userInfo = Entidades(binding.identificacion.text.toString().toInt(),binding.names.text.toString(),binding.email.text.toString(),binding.password.text.toString())
+                    if (!binding.tipoUser.text.isEmpty() && !binding.correos.text.isEmpty() && !binding.claveTipos.text.isEmpty() && !binding.password.text.isEmpty() && !binding.tipoUsuario.text.isEmpty()){
+                        val userInfo = Entidades(uid,binding.correos.text.toString(),binding.claveTipos.text.toString(),binding.password.text.toString(),binding.tipoUsuario.text.toString())
                         GlobalScope.launch(Dispatchers.IO) {
                             BaseDatos.getInstance(this@RegistrarUser).usuarioDao().update(userInfo)
                         }
                         Toast.makeText(applicationContext, "Registro Insertado", Toast.LENGTH_SHORT).show()
                     } else{
-                        Toast.makeText(applicationContext, "Por vafor inserte el primer valor", Toast.LENGTH_SHORT).show()
+                        binding.correos.error = "Ingrese la identificacion"
+                        binding.claveTipos.error = "Ingrese un correo"
+                        binding.password.error = "Ingrese una contraseña"
+                        binding.tipoUser.error = "Ingrese el ID del tipo de usuario"
+                        binding.tipoUser.requestFocus()
+                        binding.correos.requestFocus()
+                        binding.claveTipos.requestFocus()
+                        binding.password.requestFocus()
                     }
                     showDelate("Informacion del usuario","Registro actualizado")
                 }

@@ -9,15 +9,7 @@
         android:roundIcon="@mipmap/logos_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Biblioteca">
-        <activity
-            android:name=".data.Registar"
-            android:exported="false"
-            android:label="@string/title_activity_registar"
-            android:theme="@style/Theme.Biblioteca.NoActionBar" />
-        <activity
-            android:name=".MainActivity2"
-            android:exported="false"
-            android:label="@string/title_activity_main2" />
+
         <activity
             android:name=".tipoUser.tipoActivity"
             android:exported="false" />
