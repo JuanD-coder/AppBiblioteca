@@ -1,8 +1,12 @@
 package com.example.biblioteca.data
 
+import android.content.Context
 import android.content.DialogInterface
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.Menu
+import android.view.MenuItem
 import android.view.View
 import android.view.animation.Animation
 import android.view.animation.AnimationUtils
@@ -12,6 +16,7 @@ import androidx.appcompat.app.AlertDialog
 import com.example.biblioteca.R
 import com.example.biblioteca.data.dao.Entidades
 import com.example.biblioteca.databinding.ActivityRegistrarUserBinding
+import com.example.biblioteca.perfil.Pefil
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch
@@ -185,4 +190,26 @@ class RegistrarUser : AppCompatActivity() {
     private fun mostrar(userData: String) {
         Toast.makeText(this@RegistrarUser, "${userData}", Toast.LENGTH_SHORT).show()
     }
-}
+
+    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+        menuInflater.inflate(R.menu.menu, menu)
+        return true //super.onCreateOptionsMenu(menu)
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        when(item.itemId){
+            R.id.perfil -> startActivity(Intent(this, Pefil::class.java))
+            R.id.cerrar -> cerrarSesion()
+        }
+        return super.onOptionsItemSelected(item)
+    }
+
+    private fun cerrarSesion() {
+        val preferences = getSharedPreferences("access", Context.MODE_PRIVATE)
+        val editor = preferences.edit()
+        editor.putString("sesion", "0")
+        editor.apply()
+        finish()
+    }
+
+    }
