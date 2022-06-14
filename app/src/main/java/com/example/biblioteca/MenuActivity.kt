@@ -22,7 +22,7 @@ class MenuActivity : AppCompatActivity() {
         title = ""
 
         vinculo.user.setOnClickListener{
-            showDelate("Antes de registar un usuario debe de registar un tipo de Usuario","Aceptar")
+
             startActivity(Intent(this, RegistrarUser::class.java))
         }
 
@@ -31,13 +31,7 @@ class MenuActivity : AppCompatActivity() {
             startActivity(Intent(this,tipoActivity::class.java))
         }
     }
-    private fun showDelate(titulo: String, mensaje: String){
-        val alert = android.app.AlertDialog.Builder(this@MenuActivity)
-        alert.setTitle(titulo)
-        alert.setMessage(mensaje)
-        alert.setCancelable(true)
-        alert.show()
-    }
+
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
         menuInflater.inflate(R.menu.menu, menu)
