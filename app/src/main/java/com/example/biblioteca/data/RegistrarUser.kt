@@ -39,6 +39,8 @@ class RegistrarUser : AppCompatActivity() {
 
         binding.tipoUser.text.isEmpty()
 
+        showDelate("Antes de registar un usuario debe de registar un tipo de Usuario","Aceptar")
+
 
         binding.agregar.setOnClickListener{
             var nombre:String?=null

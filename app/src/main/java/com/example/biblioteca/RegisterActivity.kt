@@ -6,10 +6,13 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
+import android.widget.DatePicker
 import android.widget.Toast
 import com.example.biblioteca.databinding.ActivityMainBinding
 import com.example.biblioteca.databinding.ActivityRegisterBinding
+import com.example.biblioteca.fecha.Date
 import com.example.biblioteca.perfil.Pefil
+import java.time.Month
 
 class RegisterActivity : AppCompatActivity() {
     private lateinit var registerVinculo: ActivityRegisterBinding
@@ -20,6 +23,8 @@ class RegisterActivity : AppCompatActivity() {
         title = ""
 
         val preferences = getSharedPreferences("access", Context.MODE_PRIVATE)
+
+        registerVinculo.date.setOnClickListener{ showDate() }
 
         registerVinculo.regis.setOnClickListener {
             val editor = preferences.edit()
@@ -34,6 +39,16 @@ class RegisterActivity : AppCompatActivity() {
             Toast.makeText(this, "Registrado con exito", Toast.LENGTH_SHORT).show()
             startActivity(Intent(this,MainActivity::class.java))
         }
+    }
+
+    private fun showDate() {
+        val datePicker = Date{day, month, year -> dateSelected(day, month, year)}
+        datePicker.show(supportFragmentManager,"datePicker")
+    }
+
+    fun dateSelected(day:Int, month:Int, year:Int){
+        registerVinculo.date.setText(" Dia: $day Mes: $month Año: $year")
+
     }
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
